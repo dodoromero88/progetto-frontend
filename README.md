@@ -1,4 +1,19 @@
 # CentroEstetico
+Parte Lato Front-End,
+
+Progetto per esame programmazione WEB & MOBILE
+Applicazione web: SINGLE PAGE APPLICATION, utilizzo del Framework Angular   con interfaccia utente HTML
+Descrizione Applicazion:
+-Prenotazione appuntamnti online per prestazioni servici generici
+-Nel mio caso specifico centro estetico/parrucchiera
+Abbiamo utilizzato queste tecnologie:
+*Angular
+*NODEjs
+*expressJS
+*Sqlite
+*Template bootstrap
+*API 
+*MongoDB
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
 

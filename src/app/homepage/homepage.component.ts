@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class HomepageComponent implements OnInit {
   prova: string = 'Ciao';
 
+  testInput: string = 'test';
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
