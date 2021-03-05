@@ -1,68 +1,99 @@
+<div>
 <main role="main" class="container">
 
     <div class="starter-template">
         <h1>Benvenuti! prenotatevi ora per un esperienza magnifica</h1>
 
         <div>
-         <button (click)="onClickVaiAllaLogin()">Vai alla login </button>
+            <button (click)="onClickVaiAllaLogin()">Vai alla login </button>
 
             {{ prova }}
 
-            <p> <input type="text" [(ngModel)]="testInput">  eseguo una prova di 2 way databining</p>
-
-            <p class="lead">DESCIRZIONE <br> All you get is this text and a mostly barebones HTML document.</p>
-
-            <p> This is my page, e scrivo quello che voglio </p>
-            <p> scrivo qualcosa per <strong>verica</strong> della pagina </p>
-            <p> <strong> WEB </strong> </p>
-            <p>clicca qui per prenotarti: <a href="/booking"> <strong>PRENOTAZIONE </strong></a> </p>
-
+            <p> <input type="text" [(ngModel)]="testInput"> eseguo una prova di 2 way databining</p>
+            <p>{{testInput}}</p> 
+            <h1 class="lead"> <strong>ALTHEA CENTRO ESTETICO</strong></h1> <br> <p>Centro e salone di Belezza all'avanguardia.</p>
+            <div class="wpb_wrapper">
+                <h4>Beauty &amp; Nails</h4>
+            </div>
         </div>
-
-        <p class="lead">DESCIRZIONE.<br> All you get is this text and a mostly barebones HTML document.</p>
-
+        <div class="wpb_text_column wpb_content_element ">
+            <div class="wpb_wrapper">
+                <p>All&#8217;interno dei nostri saloni, oltre ad esperti parrucchieri, potrete trovare un team di
+                    professionisti beauty &amp; nails capaci di offrire una vasta scelta di <strong>servizi
+                        tecnici</strong>, dalla semplice manicure alla nails art passando per numerosi trattamenti viso
+                    e corpo nella nostra area estetica.</p>
+                <p>Nei nostri saloni che includono Beauty &amp; Nails sarà presente una <strong>beauty
+                        consultant</strong> che vi seguirà sulla scelta dei migliori trattamenti per la vostra bellezza.
+                    Grazie all’ampia gamma di prodotti<strong> L’Oréal Professionnel</strong>, Kerastase ed Essie,
+                    potrai sicuramente trovare l’articolo più indicato alle tue esigenze.</p>
+                <p>Nei nostri saloni ci prendiamo cura della tua bellezza, preoccupandoci di farti splendere dalla testa
+                    ai piedi!</p>
+            </div>
+        </div>
+        <p>clicca qui per prenotarti: <a routerLink='/prenotazione'><strong>PRENOTAZIONE </strong></a> </p>
+        
     </div>
 
 </main><!-- /.container -->
-
+</div>
 
 <div class="container">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img [src]="'assets/images/makeup1.jpg'" class="d-block w-100" alt="ciao">
+                <img [src]="'assets/images/makeup1.jpg'" class="d-block w-75" alt="ciao">
             </div>
             <div class="carousel-item">
-                <img [src]="'assets/images/makeup2.jpg'" class="d-block w-100" alt="ciao">
+                <img [src]="'assets/images/makeup2.jpg'" class="d-block w-75" alt="ciao">
             </div>
             <div class="carousel-item">
-                <img [src]="'assets/images/makeup3.jpg'" class="d-block w-100" alt="ciao">
+                <img [src]="'assets/images/makeup3.jpg'" class="d-block w-75" alt="ciao">
             </div>
             <div class="carousel-item">
-                <img [src]="'assets/images/makeup4.jpg'" class="d-block w-100" alt="ciao">
+                <img [src]="'assets/images/makeup4.jpg'" class="d-block w-75" alt="ciao">
+            </div>
+            <div class="carousel-item">
+                <img [src]="'assets/images/makeup5.jpg'" class="d-block w-75" alt="ciao">
+            </div>
+            <div class="carousel-item">
+                <img [src]="'assets/images/makeup6.jpg'" class="d-block w-75" alt="ciao">
+            </div>
+            <div class="carousel-item">
+                <img [src]="'assets/images/makeup7.jpg'" class="d-block w-75" alt="ciao">
             </div>
         </div>
     </div>
 </div>
 
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
+<div class="smrt-main-content container-fluid">
+    <div class="col-xs-12">
+        <div class="container">
+            <div class="smrt-content smrt-margin-bottom row">
+                <p style="text-align: center;">&nbsp;</p>
+                <h3 style="text-align: center;">SPA</h3>
+                <div class="col-xs-12 col-lg-10 col-lg-push-1 col-xl-8 col-xl-push-2">
+                    <p style="text-align: center;">La nostra SPA <strong>&ldquo;Acqua Thermae di Roma&rdquo;
+                        </strong>si propone come centro di benessere per il corpo e per la mente, ed &egrave; dotata
+                        di piscina, sauna, bagno turco, percorso kneipp, stanza del sale, cabine termali, cabine per
+                        trattamenti ed una zona fitness. Dimenticate lo stress del quotidiano, rigeneratevi in
+                        luoghi d&rsquo;altri tempi, immergetevi nel morbido calore delle acque, lasciatevi cullare
+                        da dolci idromassaggi per una totale remise en forme e per una corretta prevenzione.&nbsp;
+                    </p>
+                    <p style="text-align: center;">Regalare dei momenti di piacevole relax &eacute; nei nostri
+                        obbiettivi.</p>
+                    <p style="text-align: center;">Farsi amare e coccolare, diventa la nostra missione.</p>
+                    <p style="text-align: center;">I pareri dei nostri ospiti saranno di grande importanza per la
+                        crescita costante di Aqua Terme di Roma, nuovi metodi cosmetologici e protocolli esclusivi
+                        personalizzati, saranno un punto di partenza per promuovere la soddisfazione dei nostri
+                        ospiti. Aqua Terme di Roma sar&agrave; una suggestiva e accattivante meta di relax per
+                        ospiti esigenti di tutte le et&agrave;, offrendo un prodotto Spa esclusivo e personalizzato.
+                    </p>
+                    <p style="text-align: center;">&nbsp;</p>
+
+                    <h6>*L&rsquo;accesso alla spa &egrave; consentito ai soli maggiori di 16 anni</h6>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
-<!--slides end-->
-
-<p class="lead">DESCIRZIONE <br> All you get is this text and a mostly barebones HTML document.</p>
-
-<p> This is my page, e scrivo quello che voglio </p>
-<p> scrivo qualcosa per <strong>verica</strong> della pagina </p>
-<p> <strong> WEB </strong> </p>
-<p>clicca qui per prenotarti: <a href="/booking"> <strong>PRENOTAZIONE </strong></a> </p>
-
-
-<p class="lead">DESCIRZIONE.<br> All you get is this text and a mostly barebones HTML document.</p>

@@ -20,4 +20,8 @@ export class HomepageComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  onClickVaiAllaPrenotazione(){
+    this.router.navigate(['prenotazione']);
+  }
+
 }

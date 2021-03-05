@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  
+    padding: 50px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+       /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+    max-width: 200em;
+    
+  }
+   
+main {
+  
+    background:url(/assets/images/index_prova.jpg);
+    width: 100%;
+    
+  }
+
