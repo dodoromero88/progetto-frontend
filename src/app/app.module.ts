@@ -10,6 +10,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrenotazioneComponent } from './prenotazione/prenotazione.component';
 import { InfoComponent } from './info/info.component';
+import { AdminComponent } from './admin/admin.component';
+import { UtenteService } from './service/utente.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,15 +22,17 @@ import { InfoComponent } from './info/info.component';
     FooterComponent,
     HomepageComponent,
     PrenotazioneComponent,
-    InfoComponent
+    InfoComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UtenteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

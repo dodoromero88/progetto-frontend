@@ -7,8 +7,6 @@
         <div class="row">
             <div class="col">
                 <img [src]="'http://www.althaeabellezza.it/images/logo@2x.jpg'" />
-
-
             </div>
         </div>
         <div class="row">
@@ -17,34 +15,29 @@
             </div>
             <div class="col-6">
                 <div class="login">
-                    <form action="/user" method="POST">
+                    <form>
                         <div class="form-group">
                             <label for="email">Email Account</label>
-                            <input type="email" class="form-control email" id="email" name="email"
-                                placeholder="Enter email valid">
+                            <input [(ngModel)]="utente.email" name="email" type="email" class="form-control email" id="email" placeholder="Enter email valid">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                                 else.</small>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control password" id="password" name="password"
-                                placeholder="Password">
+                            <input [(ngModel)]="utente.password" name="password" type="password" class="form-control password" id="password" placeholder="Password">
                         </div>
-                        <button class="btn btn-primary">Accedi</button>
+                        <button (click)="onClickAccedi()" type="button" class="btn btn-primary">Accedi</button>
 
                         <article class="card-body mx-auto" style="max-width: 400px;">
                             <p class="divider-text">
                                 <span class="bg-light">OPPURE</span>
                             </p>
-
                         </article>
                     </form>
                 </div>
                 <div>
-                    <p>oppure se non sei registrato clicca qui :
-
-                        <br> <a href="signup"> <button class="btn btn-primary">Sign up</button></a>
-                    </p>
+                    <p>oppure se non sei registrato clicca qui : </p>
+                    <p style="text-align: center;"> <button (click)="onClickRegistrati" type="button" class="btn btn-primary">Sign up</button></p>
                 </div>
 
                 <h4 class="card-title mt-3 text-center">Accedi direttamente con </h4>
@@ -53,8 +46,7 @@
                         Google</button>
                     <button onclick="twitterLogin()" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>
                         Twitter</button>
-                    <button onclick="facebookLogin()" class="btn btn-block btn-facebook"> <i
-                            class="fab fa-facebook-f"></i> facebook</button>
+                    <button onclick="facebookLogin()" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i> facebook</button>
                 </p>
 
 

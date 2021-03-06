@@ -1,3 +1,8 @@
 export const environment = {
-  production: true
+  production: true,
+  apis: {
+    utente: {
+      LOGIN: '/api/utente/login'
+    }
+}
 };
