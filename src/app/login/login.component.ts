@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UtenteService } from '@app/service/utente.service';
 import { Utente } from '../model/utente.model';
 
 @Component({
@@ -8,10 +10,10 @@ import { Utente } from '../model/utente.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  
   utente: Utente = new Utente();
-
-  constructor(private router: Router) { }
+  utente_service: UtenteService;
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,9 +22,9 @@ export class LoginComponent implements OnInit {
   onClickAccedi(){
 
     console.log(this.utente);
-    
-
-    this.router.navigate(['']);
+    this.utente_service = new UtenteService(this.http, this.router);
+    this.utente_service.login(this.utente.email,this.utente.password);
+    // this.router.navigate(['']);
   }
 
   onClickRegistrati(){

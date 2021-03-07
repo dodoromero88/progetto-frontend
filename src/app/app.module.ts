@@ -12,7 +12,8 @@ import { PrenotazioneComponent } from './prenotazione/prenotazione.component';
 import { InfoComponent } from './info/info.component';
 import { AdminComponent } from './admin/admin.component';
 import { UtenteService } from './service/utente.service';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from '@angular/common/http';
     HomepageComponent,
     PrenotazioneComponent,
     InfoComponent,
-    AdminComponent
+    AdminComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

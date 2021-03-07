@@ -19,7 +19,7 @@ export class UtenteService {
       console.log("response", response);
       this.utente = response.data as Utente;
       this.token = response.token;
-      this.router.navigate(['/auth/profile']);
+      this.router.navigate(['/profile']);
     }, error => {
       console.log(error);
     });

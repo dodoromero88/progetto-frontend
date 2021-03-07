@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   apis: {
     utente: {
-      LOGIN: '/api/utente/login'
+      LOGIN: 'http://localhost:7500/api/utente/login'
     }
   }
 };
