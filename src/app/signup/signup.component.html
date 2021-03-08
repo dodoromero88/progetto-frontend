@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row mt-3 justify-content-center">
+      <h3>Registrati</h3>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <form [formGroup]="signupForm" name="signupForm">
+          <div class="row justify-content-center">
+            <div class="form-group col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <label for="email" class="font-large text-border-tiffany">Email</label>
+              <input type="email" [ngClass]="emailColour" class="form-control" id="email" placeholder="Email"
+                (input)="checkEmail()" formControlName="email" name="email" autocomplete="off">
+              <ul [ngClass]="emailColour == 'is-valid' ? 'd-none' : 'invalid-feedback'">
+                <li>Indirizzo email scorretto</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="form-group col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <label for="password" class="font-large text-border-tiffany">Password</label>
+              <input type="password" [ngClass]="passwordColour" class="form-control" id="password" placeholder="Password"
+                (input)="checkPassword()" formControlName="password" name="password" autocomplete="off">
+              <ul [ngClass]="passwordColour == 'is-valid' ? 'd-none' : 'invalid-feedback'">
+                <li *ngIf="utente.password == ''">Campo obbligatorio</li>
+                <li *ngIf="!passLength">Almeno 8 caratteri</li>
+                <li *ngIf="!passMaiusc">Almeno 1 maiuscola</li>
+                <li *ngIf="!passMinusc">Almeno 1 minuscola</li>
+                <li *ngIf="!passNumber">Almeno 1 numero</li>
+                <li *ngIf="!passSpecial">Almeno 1 carattere speciale</li>
+              </ul>
+            </div>
+            <div class="form-group col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <label for="conferma" class="font-large text-border-tiffany">Conferma Password</label>
+              <input type="password" [ngClass]="confermaColour" class="form-control" id="conferma"
+                placeholder="Conferma Password" (input)="checkConferma()" formControlName="conferma" name="conferma"
+                autocomplete="off">
+              <ul [ngClass]="confermaColour == 'is-valid' ? 'd-none' : 'invalid-feedback'">
+                <li>Deve essere identica al campo precedente</li>
+              </ul>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center mb-4 mt-2">
+            <button type="button" (click)="signupUser()" class="btn btn-success block-cursor"
+              [disabled]="!signupForm.valid">Registrati</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

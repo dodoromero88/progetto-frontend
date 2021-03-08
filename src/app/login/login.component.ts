@@ -12,8 +12,7 @@ import { Utente } from '../model/utente.model';
 export class LoginComponent implements OnInit {
   
   utente: Utente = new Utente();
-  utente_service: UtenteService;
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private utenteService: UtenteService ) { }
 
   ngOnInit(): void {
   }
@@ -22,13 +21,10 @@ export class LoginComponent implements OnInit {
   onClickAccedi(){
 
     console.log(this.utente);
-    this.utente_service = new UtenteService(this.http, this.router);
-    this.utente_service.login(this.utente.email,this.utente.password);
+    this.utenteService.login(this.utente.email,this.utente.password);
     // this.router.navigate(['']);
   }
 
-  onClickRegistrati(){
-    this.router.navigate(['signup']);
-  }
+
 
 }

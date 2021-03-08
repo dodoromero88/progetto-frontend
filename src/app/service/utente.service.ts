@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Utente } from '../model/utente.model';
 import { environment } from '@env/environment';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class UtenteService {
@@ -23,5 +24,9 @@ export class UtenteService {
     }, error => {
       console.log(error);
     });
+  }
+
+  signup(utente: Utente): Observable<any> {
+    return this.http.post<any>(environment.apis.utente.SIGNUP, utente);
   }
 }
