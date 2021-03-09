@@ -4,6 +4,9 @@ export const environment = {
     utente: {
       LOGIN: '/api/utente/login',
       SIGNUP: '/api/utente/signup'
+    },
+    booking: {
+      GETALL: '/api/booking'
     }
 }
 };

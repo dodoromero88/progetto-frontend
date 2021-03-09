@@ -14,6 +14,10 @@
                 Loggati per accedere alla tua pagina
             </div>
             <div class="col-6">
+                <p *ngIf="!responseSuccess"> Utente registrato corretamente {{ message }}</p>
+                <p *ngIf="responseSuccess"> </p>
+                
+
                 <div class="login">
                     <form>
                         <div class="form-group">

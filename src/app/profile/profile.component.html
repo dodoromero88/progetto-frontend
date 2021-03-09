@@ -1,1 +1,4 @@
-<p>profile works!</p>
+<h3 *ngIf="!isAdmin"> Benvenuto Utente {{ utente.email}}</h3>
+
+<h3 *ngIf="isAdmin">Benvenuto Amministratore {{ utente.email}}</h3>
+

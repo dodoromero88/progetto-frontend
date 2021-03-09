@@ -1,0 +1,8 @@
+<div class="date-picker-wrapper">
+    <igx-date-picker [showWeekNumbers]="true"  [value]="date"></igx-date-picker>
+</div>
+
+<igx-input-group>
+    <label igxLabel>Choose Date</label>
+    <input type="text" igxInput [igxDateTimeEditor]="'HH:mm'" [value]="date" [igxTextSelection]="true"/>
+</igx-input-group>

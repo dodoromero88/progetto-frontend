@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule} from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,6 +13,14 @@ import { UtenteService } from './service/utente.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
+import { IsLoggedGuard } from './guard/is-logged.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HammerModule } from "@angular/platform-browser";
+import { IgxDatePickerModule, IgxDateTimeEditorModule, IgxInputGroupModule, IgxTextSelectionModule } from "igniteui-angular";
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import { PrenotazioneService } from './service/prenotazione.service';
+import { DataService } from './service/data.service';
+
 
 @NgModule({
   declarations: [
@@ -24,16 +32,24 @@ import { SignupComponent } from './signup/signup.component';
     PrenotazioneComponent,
     InfoComponent,
     ProfileComponent,
-    SignupComponent
+    SignupComponent,
+    DatepickerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    IgxDatePickerModule,
+    HammerModule,
+    IgxInputGroupModule,
+  	IgxDateTimeEditorModule,
+	  IgxTextSelectionModule
   ],
-  providers: [UtenteService],
+  providers: [UtenteService, IsLoggedGuard,PrenotazioneService,DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { } 
+export class AppModule {
+}

@@ -3,6 +3,7 @@ import { Utente } from '../model/utente.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UtenteService } from '../service/utente.service';
 import { Router } from '@angular/router';
+import { DataService } from '@app/service/data.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   utente: Utente = new Utente();
+  message:string;
   emailColour: string;
   usernameColour: string;
   passwordColour: string;
@@ -30,8 +32,10 @@ export class SignupComponent implements OnInit {
     'conferma': new FormControl('', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&#])[A-Za-z\d$@$!%*?&#].{8,}')])
   });
 
-  constructor(private service:UtenteService, private router:Router){}
-  ngOnInit() {}
+  constructor(private service:UtenteService, private router:Router,private data: DataService){}
+  ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.message = message);
+  }
 
   get email() {
     return this.signupForm.get('email');
@@ -74,9 +78,10 @@ export class SignupComponent implements OnInit {
     console.log(this.utente.email);
     
     this.service.signup(this.utente).subscribe(response => {
-      if(response && response.status == 'OK'){
-        this.router.navigate(['/login']);
-      }
+      console.log(response);
+      // this.message = JSON.stringify(response);
+      this.data.changeMessage(JSON.stringify(response));
+      this.router.navigate(['login']);
     }, error => {
       console.log('error, ', error);
     });

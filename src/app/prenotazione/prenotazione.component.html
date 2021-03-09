@@ -9,11 +9,26 @@
 
 
         <h2>Calendario</h2>
+        <div class="row">
+            <div class="col-6">
+                <div class="date-picker-wrapper">
+                    <igx-date-picker (click)="onInputDatePicker()" [(ngModel)]="datePickerDate" [showWeekNumbers]="true"  [value]="date"></igx-date-picker>
+                </div>
+                
+                <igx-input-group>
+                    <label igxLabel>Choose Date</label>
+                    <input (click)="onInputDatePicker()" [(ngModel)]="datePickerTime" type="text" igxInput [igxDateTimeEditor]="'HH:mm'" [value]="date" [igxTextSelection]="true"/>
+                </igx-input-group>
+            </div>
+        </div>
+        <button (click)="onClickPrenotazione()">Clicca qui!</button>
+
         <p class="lead">Prenotazione.<br> All you get is this text and a mostly barebones HTML document.</p>
 
 
         <div class="container">
-            <!-- Content here -->
+            <h3 *ngIf= "errorPrenotazione">Impossibile effetuare la Prenotazione, orario occupato!</h3>
+            <h3 *ngIf= "successPrenotazione">Prenotazione Effetuata con successo</h3>
 
         </div>
 
